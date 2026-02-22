@@ -1,11 +1,136 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="light">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vidya - Rural Learning Platform</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: { primary: '#73d411', 'accent-saffron': '#FF9933' },
+          fontFamily: { display: ['Lexend', 'sans-serif'] },
+          borderRadius: { DEFAULT: '0.5rem' }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { font-family: Lexend, sans-serif; }
+    .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+  </style>
 </head>
-<body>
-    
+<body class="bg-gradient-to-br from-emerald-50 to-sky-50 min-h-screen p-4 md:p-8">
+  <!-- Header -->
+  <header class="max-w-6xl mx-auto mb-12 text-center">
+    <div class="inline-flex items-center gap-4 bg-white/80 backdrop-blur-md px-8 py-6 rounded-3xl shadow-2xl mb-8">
+      <span class="text-5xl">🏫</span>
+      <div>
+        <h1 class="text-4xl md:text-6xl font-black text-emerald-900 tracking-tight">Vidya</h1>
+        <p class="text-xl text-gray-700 mt-2">Free Learning for Rural Students</p>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-5xl mx-auto space-y-12">
+    <!-- Progress Tracker (from biotab.html) -->
+    <section class="bg-white/90 backdrop-blur-xl rounded-3xl p-8 md:p-12 shadow-2xl border border-emerald-100">
+      <h2 class="text-3xl font-bold mb-8 flex items-center gap-4 text-emerald-900">
+        <span class="text-4xl">📚</span> Biology Progress
+      </h2>
+      <div id="progressBar" class="w-full bg-gray-200 rounded-2xl h-10 mb-8 overflow-hidden shadow-inner">
+        <div id="progressFill" class="bg-gradient-to-r from-emerald-500 to-teal-600 h-10 rounded-2xl shadow-lg transition-all duration-1000" style="width: 40%;"></div>
+      </div>
+      <div class="grid md:grid-cols-2 gap-6 text-center">
+        <button onclick="updateProgress(75)" class="bg-emerald-500 hover:bg-emerald-600 text-white py-6 px-8 rounded-2xl font-bold text-xl shadow-xl hover:shadow-2xl transition-all">
+          Continue Lesson
+        </button>
+        <button onclick="updateProgress(100)" class="bg-green-500 hover:bg-green-600 text-white py-6 px-8 rounded-2xl font-bold text-xl shadow-xl hover:shadow-2xl transition-all">
+          ✅ Complete Chapter
+        </button>
+      </div>
+      <p class="text-center mt-6 text-lg font-semibold text-gray-700" id="progressText">40% Complete</p>
+    </section>
+
+    <!-- Course Cards (your biotab content simplified) -->
+    <section class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="bg-white/80 backdrop-blur-md rounded-3xl p-8 shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all group border border-gray-100">
+        <div class="text-6xl mb-6 text-emerald-500 group-hover:rotate-6 transition-transform mx-auto">🔬</div>
+        <h3 class="text-2xl font-bold mb-4 text-gray-900 text-center">Biology Class XI-XII</h3>
+        <div class="space-y-3 mb-8">
+          <div class="flex items-center gap-3 p-3 bg-emerald-50 rounded-2xl">
+            <span class="text-emerald-500">✓</span>
+            <span>Diversity in Living World (12 lessons)</span>
+          </div>
+          <div class="flex items-center gap-3 p-3 bg-emerald-50 rounded-2xl">
+            <span class="text-emerald-500">✓</span>
+            <span>Cell Structure (Current - 40%)</span>
+          </div>
+          <div class="flex items-center gap-3 p-3 bg-gray-50 rounded-2xl opacity-75">
+            <span class="text-gray-400">🔒</span>
+            <span>Plant Physiology</span>
+          </div>
+        </div>
+        <button class="w-full bg-emerald-500 hover:bg-emerald-600 text-white py-4 px-8 rounded-2xl font-bold shadow-lg hover:shadow-xl transition-all">
+          Start Learning
+        </button>
+      </div>
+
+      <div class="md:col-span-2 bg-white/80 backdrop-blur-md rounded-3xl p-8 shadow-xl hover:shadow-2xl border border-gray-100">
+        <h3 class="text-2xl font-bold mb-6 flex items-center gap-3">
+          <span class="text-purple-500 text-3xl">🧬</span> Cell Structure & Function
+        </h3>
+        <p class="text-lg text-gray-700 mb-8 leading-relaxed">
+          The cell is the basic unit of life. All living organisms are made of cells...
+        </p>
+        <!-- Your cell-theory content here -->
+        <div class="grid md:grid-cols-2 gap-6 mb-8">
+          <div class="p-6 bg-gradient-to-br from-purple-50 to-indigo-50 rounded-2xl">
+            <h4 class="font-bold text-lg mb-3">Unicellular</h4>
+            <p class="text-sm text-gray-600">Single cell organisms like bacteria</p>
+          </div>
+          <div class="p-6 bg-gradient-to-br from-purple-50 to-indigo-50 rounded-2xl">
+            <h4 class="font-bold text-lg mb-3">Multicellular</h4>
+            <p class="text-sm text-gray-600">Humans, plants, animals</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="text-center p-16 bg-gradient-to-r from-emerald-500 to-teal-600 text-white rounded-3xl shadow-2xl">
+      <h2 class="text-4xl font-black mb-6">Ready to Learn Offline?</h2>
+      <p class="text-xl mb-10 opacity-95 max-w-2xl mx-auto">
+        Works on any phone, saves progress locally, Hindi/English support
+      </p>
+      <button class="bg-white text-emerald-600 px-12 py-6 rounded-3xl text-2xl font-bold shadow-2xl hover:shadow-3xl hover:scale-105 transition-all">
+        Start Your Free Journey
+      </button>
+    </section>
+  </main>
+
+  <!-- Offline Progress JS -->
+  <script>
+    function loadProgress() {
+      const saved = localStorage.getItem('vidyaProgress') || '{}';
+      const progress = JSON.parse(saved).biology || 40;
+      document.getElementById('progressFill').style.width = progress + '%';
+      document.getElementById('progressText').textContent = progress + '% Complete';
+    }
+
+    function updateProgress(percent) {
+      const newProgress = { biology: percent };
+      localStorage.setItem('vidyaProgress', JSON.stringify(newProgress));
+      document.getElementById('progressFill').style.width = percent + '%';
+      document.getElementById('progressText').textContent = percent + '% Complete';
+    }
+
+    // Load on start
+    loadProgress();
+  </script>
 </body>
 </html>
