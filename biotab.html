@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>विdya - Biology Course</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "primary": "#73d411",
+                "accent-saffron": "#FF9933",
+                "background-light": "#f7f8f6",
+                "background-dark": "#192210",
+              },
+              fontFamily: {
+                "display": ["Lexend", "sans-serif"]
+              },
+              borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+            },
+          },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Lexend', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<!-- Navigation Header -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-primary/10 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md px-6 md:px-20 py-4 sticky top-0 z-50">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-3">
+<div class="size-10 bg-primary flex items-center justify-center rounded-lg text-white shadow-lg shadow-primary/20">
+<span class="text-2xl font-bold">वि</span>
+</div>
+<h2 class="text-slate-900 dark:text-slate-100 text-2xl font-black leading-tight tracking-tight">विdya</h2>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors text-sm font-medium" href="#">Home</a>
+<a class="text-primary text-sm font-bold border-b-2 border-primary pb-1" href="#">Courses</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors text-sm font-medium" href="#">Profile</a>
+</nav>
+</div>
+<div class="flex flex-1 justify-end gap-4 items-center">
+<label class="hidden sm:flex flex-col min-w-40 h-10 max-w-64">
+<div class="flex w-full flex-1 items-stretch rounded-xl h-full bg-slate-100 dark:bg-slate-800">
+<div class="text-slate-400 flex items-center justify-center pl-4">
+<span class="material-symbols-outlined text-xl">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 border-none bg-transparent focus:ring-0 placeholder:text-slate-400 px-3 text-sm" placeholder="Search topics..." value=""/>
+</div>
+</label>
+<div class="size-10 rounded-full border-2 border-primary/20 p-0.5">
+<div class="w-full h-full bg-slate-200 rounded-full bg-cover bg-center" data-alt="Student profile avatar placeholder" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDWcnsQSasp_3uVje8te0K_1J87MOrRGOvQYVqkvd2YNFbT08GXxlgIJlbI_8e-RmXS89RTIWOv99mc5-UzErTmOTIPS35hs1CCZ9UOgpifKr4J2sNld2bUqtQmVga4HB6kUjCQ7qG67fjQF-hatUL2toyDAzAEYcJY2poG5lXbHnnDN04iax4V16iWi-Ks1eIoTWimROOpJrBDQtwg_stbNLtfX0HWxswPQvdJFzuiS3BFCw-8CAkVoKZygqouD5-OX8A0oAmnhmM')"></div>
+</div>
+</div>
+</header>
+<main class="flex flex-1 justify-center py-8">
+<div class="layout-content-container flex flex-col max-w-[1000px] flex-1 px-4 md:px-10">
+<!-- Subject Hero Section -->
+<div class="flex flex-wrap justify-between items-end gap-6 p-6 rounded-3xl bg-gradient-to-br from-primary/10 to-transparent border border-primary/10 mb-8">
+<div class="flex min-w-72 flex-col gap-2">
+<div class="flex items-center gap-2 mb-1">
+<span class="px-3 py-1 bg-accent-saffron/10 text-accent-saffron text-[10px] font-bold uppercase tracking-wider rounded-full">Science Stream</span>
+<span class="px-3 py-1 bg-primary/10 text-primary text-[10px] font-bold uppercase tracking-wider rounded-full">Class XI-XII</span>
+</div>
+<h1 class="text-slate-900 dark:text-slate-100 text-5xl font-black leading-tight tracking-tight">Biology</h1>
+<p class="text-slate-600 dark:text-slate-400 text-lg font-normal max-w-md">Master the fascinating study of life, from microscopic cells to complex human systems.</p>
+</div>
+<div class="flex flex-col gap-4 w-full md:w-auto min-w-[300px]">
+<div class="bg-white dark:bg-slate-800 p-5 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700">
+<div class="flex justify-between items-center mb-3">
+<span class="text-slate-900 dark:text-slate-100 font-bold">Overall Progress</span>
+<span class="text-primary font-black">40%</span>
+</div>
+<div class="h-3 w-full bg-slate-100 dark:bg-slate-700 rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 40%;"></div>
+</div>
+<p class="text-slate-500 dark:text-slate-400 text-xs mt-3 flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">check_circle</span>
+                                    2 of 5 chapters completed
+                                </p>
+</div>
+<button class="w-full flex items-center justify-center gap-2 rounded-xl h-12 px-6 bg-primary text-white font-bold hover:shadow-lg hover:shadow-primary/30 transition-all active:scale-[0.98]">
+<span class="material-symbols-outlined">play_arrow</span>
+                                Resume Last Lesson
+                            </button>
+</div>
+</div>
+<!-- Chapters Grid -->
+<div class="flex items-center justify-between mb-6 px-2">
+<h2 class="text-slate-900 dark:text-slate-100 text-2xl font-bold tracking-tight">Course Chapters</h2>
+<div class="flex gap-2">
+<button class="p-2 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">
+<span class="material-symbols-outlined">filter_list</span>
+</button>
+</div>
+</div>
+<div class="grid gap-4 mb-12">
+<!-- Chapter I -->
+<div class="group flex flex-col md:flex-row items-stretch justify-between gap-6 rounded-2xl bg-white dark:bg-slate-800 p-6 border border-slate-100 dark:border-slate-700 shadow-sm hover:shadow-md transition-all hover:border-primary/30">
+<div class="flex flex-1 flex-col justify-between gap-4">
+<div class="flex items-start gap-4">
+<div class="size-14 flex items-center justify-center rounded-xl bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-3xl">eco</span>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<span class="text-primary font-bold text-xs uppercase tracking-widest">Completed</span>
+<span class="material-symbols-outlined text-primary text-sm">verified</span>
+</div>
+<h3 class="text-slate-900 dark:text-slate-100 text-xl font-bold leading-tight">I. Diversity in Living World</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm">Explore the vast variety of living organisms and their classification on Earth.</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="flex items-center justify-center rounded-xl h-10 px-5 bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 text-sm font-bold hover:bg-slate-200 transition-colors">
+                                        Review Chapter
+                                    </button>
+</div>
+</div>
+<div class="md:w-64 h-36 bg-slate-200 dark:bg-slate-700 rounded-xl overflow-hidden relative">
+<div class="absolute inset-0 bg-cover bg-center opacity-80" data-alt="Microscopic view of diverse organisms and plants" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBI-FlFE3lpwYg9ZAkNYbRj9-DjVxX1Mln6Cn_3a3bZDPJIyFPKjoPk--D3IXuKu_ZXMTxeQk_EJPrl1wvvA0NsyCKiGDTCkT5x12NN4Yej9bc8rjLVdMAnslAHrv3JKCFHF1En2bWDGP9ZyWusRjQzHtAhkn_3Y9KvlipSnmvdhCdgymjpstAb_Ld_xiE0naBESx5gTuLRhhzELBZgJEWfkr35dhG426Vh7EsOP-LSs0WZ7F-xVWoolV13NhdmniKXRDiY8SAneTI')"></div>
+<div class="absolute bottom-3 right-3 bg-white/90 dark:bg-slate-900/90 backdrop-blur px-2 py-1 rounded text-[10px] font-bold">12 Lessons</div>
+</div>
+</div>
+<!-- Chapter II -->
+<div class="group flex flex-col md:flex-row items-stretch justify-between gap-6 rounded-2xl bg-white dark:bg-slate-800 p-6 border border-slate-100 dark:border-slate-700 shadow-sm hover:shadow-md transition-all hover:border-primary/30">
+<div class="flex flex-1 flex-col justify-between gap-4">
+<div class="flex items-start gap-4">
+<div class="size-14 flex items-center justify-center rounded-xl bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-3xl">account_tree</span>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<span class="text-primary font-bold text-xs uppercase tracking-widest">Completed</span>
+<span class="material-symbols-outlined text-primary text-sm">verified</span>
+</div>
+<h3 class="text-slate-900 dark:text-slate-100 text-xl font-bold leading-tight">II. Structural Organisation in Animals and Plants</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm">Detailed study of anatomy and morphology across different biological kingdoms.</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="flex items-center justify-center rounded-xl h-10 px-5 bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 text-sm font-bold hover:bg-slate-200 transition-colors">
+                                        Review Chapter
+                                    </button>
+</div>
+</div>
+<div class="md:w-64 h-36 bg-slate-200 dark:bg-slate-700 rounded-xl overflow-hidden relative">
+<div class="absolute inset-0 bg-cover bg-center opacity-80" data-alt="Illustration of plant and animal tissue structure" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCyk9CV4pSwEGYggIUo7t8S0s79poXw0LneiO5T5g0kZecbgpQbUCbu6iI5UZowRVrZz09VhEhAs852wTo0K_BANh_txzVT5bmL7p5a1u76qsw-fqMHYG1_n0LsQsv1ftFMSBxuo1aKAZ_uawlble9f1hSjIUgtj0aXiIDW052jaQzOWdCbYeIt06ckxiEpaeYesLSY19oz-Gd4_HcpAvxOin4uUMu6XCW4QvwrjfCu89SgFfpgo23Groqdc1qG8zdiRUDQ2qIIRqQ')"></div>
+<div class="absolute bottom-3 right-3 bg-white/90 dark:bg-slate-900/90 backdrop-blur px-2 py-1 rounded text-[10px] font-bold">15 Lessons</div>
+</div>
+</div>
+<!-- Chapter III -->
+<div class="group flex flex-col md:flex-row items-stretch justify-between gap-6 rounded-2xl bg-white dark:bg-slate-800 p-6 border-2 border-primary shadow-lg shadow-primary/5 transition-all">
+<div class="flex flex-1 flex-col justify-between gap-4">
+<div class="flex items-start gap-4">
+<div class="size-14 flex items-center justify-center rounded-xl bg-primary text-white">
+<span class="material-symbols-outlined text-3xl">magnification_small</span>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<span class="text-accent-saffron font-bold text-xs uppercase tracking-widest">In Progress</span>
+<span class="size-1.5 bg-accent-saffron rounded-full animate-pulse"></span>
+</div>
+<h3 class="text-slate-900 dark:text-slate-100 text-xl font-bold leading-tight">III. Cell Structure and Function</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm">The unit of life: exploring organelles, cell division, and biochemical processes.</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="flex items-center justify-center gap-2 rounded-xl h-10 px-6 bg-primary text-white text-sm font-bold hover:shadow-md transition-all"><span class="material-symbols-outlined text-lg">play_circle</span>
+                                        Start Learning
+                                    </button>
+<span class="text-slate-400 text-xs font-medium">Progress: 0%</span>
+</div>
+</div>
+<div class="md:w-64 h-36 bg-slate-200 dark:bg-slate-700 rounded-xl overflow-hidden relative">
+<div class="absolute inset-0 bg-cover bg-center opacity-80" data-alt="Close-up diagram of a biological cell and nucleus" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDUxVgdkVMf3wTzdzKBowTAddNACSwjqq_x6JICHQbu9ssEGcZVoEX--9agcQLtgWRKYN8iYyfLdO8pQKvatb60qKv97QuYhJjX-IVkVJBasDT5a7MgZd9KXeaOh3cUiPvUX6UZMz9HE2P_zPqJR9Of7N_49M5_gmfvO-zLMaoVMXHSAk8rp_rzFWpxSgoaEzfdCHXKyli2W3dSzNPYVO_UsQYEYZ4S4ZO5Rrw_wHyIoorcpQ1_Dcc14ffTaQSyauVd9vxzedykP0U')"></div>
+<div class="absolute bottom-3 right-3 bg-primary text-white px-2 py-1 rounded text-[10px] font-bold">Current Module</div>
+</div>
+</div>
+<!-- Chapter IV -->
+<div class="group flex flex-col md:flex-row items-stretch justify-between gap-6 rounded-2xl bg-white dark:bg-slate-800 p-6 border border-slate-100 dark:border-slate-700 shadow-sm hover:shadow-md transition-all hover:border-primary/30">
+<div class="flex flex-1 flex-col justify-between gap-4">
+<div class="flex items-start gap-4">
+<div class="size-14 flex items-center justify-center rounded-xl bg-slate-100 dark:bg-slate-700 text-slate-400 group-hover:bg-primary/10 group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-3xl">potted_plant</span>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<span class="text-slate-400 font-bold text-xs uppercase tracking-widest">Locked</span>
+<span class="material-symbols-outlined text-slate-400 text-sm">lock</span>
+</div>
+<h3 class="text-slate-900 dark:text-slate-100 text-xl font-bold leading-tight">IV. Plant Physiology</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm">Photosynthesis, respiration, transport in plants, and growth regulators.</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="flex items-center justify-center rounded-xl h-10 px-5 bg-slate-100 dark:bg-slate-700 text-slate-400 text-sm font-bold cursor-not-allowed">
+                                        Start Learning
+                                    </button>
+</div>
+</div>
+<div class="md:w-64 h-36 bg-slate-100 dark:bg-slate-800 rounded-xl overflow-hidden relative grayscale opacity-50">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="Abstract green pattern representing plant physiology" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBIEwPISoKWreYV74IKF5ZnpnR1_gEdV2p1eoaJyJllXfmUbOkCQlsSM6VHpEzboflnxjCeolGRckqK57HDcI7MwO9FIxlJFcgecFe0HwaGZ6GuH0Z1fIy8nnuPLedSciz6248RBEgjBhdTLLMhX8XYDDZy9SrUEJZh2LcEk13nM9aXn7m0G9bIRQht5RiGgVmObuKIhHgVpvB8J3dTSvJsiRBgFfSl9yv8-uT0ixgiZ7MezHFT9k8LL9_1RqLOzja99TuCjkAKMEg')"></div>
+</div>
+</div>
+<!-- Chapter V -->
+<div class="group flex flex-col md:flex-row items-stretch justify-between gap-6 rounded-2xl bg-white dark:bg-slate-800 p-6 border border-slate-100 dark:border-slate-700 shadow-sm hover:shadow-md transition-all hover:border-primary/30">
+<div class="flex flex-1 flex-col justify-between gap-4">
+<div class="flex items-start gap-4">
+<div class="size-14 flex items-center justify-center rounded-xl bg-slate-100 dark:bg-slate-700 text-slate-400 group-hover:bg-primary/10 group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-3xl">vital_signs</span>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<span class="text-slate-400 font-bold text-xs uppercase tracking-widest">Locked</span>
+<span class="material-symbols-outlined text-slate-400 text-sm">lock</span>
+</div>
+<h3 class="text-slate-900 dark:text-slate-100 text-xl font-bold leading-tight">V. Human Physiology</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm">Comprehensive study of human organ systems, digestion, circulation, and neural control.</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="flex items-center justify-center rounded-xl h-10 px-5 bg-slate-100 dark:bg-slate-700 text-slate-400 text-sm font-bold cursor-not-allowed">
+                                        Start Learning
+                                    </button>
+</div>
+</div>
+<div class="md:w-64 h-36 bg-slate-100 dark:bg-slate-800 rounded-xl overflow-hidden relative grayscale opacity-50">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="Anatomical diagram of human circulatory system" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDhNuVhiQHYKNtUyjcL3UOd5ciFQjqAZyq1ipxsvcZts_8zUGVsjKljGsKXgxeud1jQg8BsTGf_EyPjYHZEKPglFH9KS0RWSmrlaqUArGbb-BIjB8BrV0lX0Z57gjKjFWy60BE3ncOdRst_ZaHltm0V_aXbNJpYOoAs6UCC1FGFFwYRhWCoH37NYfhtjg7F6Z_-5IVykN4Xln0QWIH8OPFHlCBmNFDYakqgH9PtDE9KA4s2dGZ4paLWVUpzO4DdSvO748HNkNJgj_Y')"></div>
+</div>
+</div>
+</div>
+<!-- Extra Resources Section -->
+<div class="mb-20">
+<h3 class="text-slate-900 dark:text-slate-100 text-xl font-bold mb-4 px-2">Additional Resources</h3>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+<a class="flex items-center gap-3 p-4 bg-white dark:bg-slate-800 rounded-xl border border-slate-100 dark:border-slate-700 hover:border-accent-saffron/50 transition-colors" href="#">
+<div class="size-10 bg-accent-saffron/10 text-accent-saffron flex items-center justify-center rounded-lg">
+<span class="material-symbols-outlined">description</span>
+</div>
+<span class="font-medium text-sm">NCERT Solutions</span>
+</a>
+<a class="flex items-center gap-3 p-4 bg-white dark:bg-slate-800 rounded-xl border border-slate-100 dark:border-slate-700 hover:border-accent-saffron/50 transition-colors" href="#">
+<div class="size-10 bg-accent-saffron/10 text-accent-saffron flex items-center justify-center rounded-lg">
+<span class="material-symbols-outlined">quiz</span>
+</div>
+<span class="font-medium text-sm">Practice Quizzes</span>
+</a>
+<a class="flex items-center gap-3 p-4 bg-white dark:bg-slate-800 rounded-xl border border-slate-100 dark:border-slate-700 hover:border-accent-saffron/50 transition-colors" href="#">
+<div class="size-10 bg-accent-saffron/10 text-accent-saffron flex items-center justify-center rounded-lg">
+<span class="material-symbols-outlined">movie</span>
+</div>
+<span class="font-medium text-sm">Video Library</span>
+</a>
+</div>
+</div>
+</div>
+</main>
+<footer class="border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-background-dark py-10">
+<div class="max-w-[1000px] mx-auto px-10 flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex items-center gap-3">
+<div class="size-8 bg-primary/20 flex items-center justify-center rounded text-primary">
+<span class="font-bold">वि</span>
+</div>
+<span class="font-bold text-slate-900 dark:text-slate-100">विdya</span>
+</div>
+<div class="flex gap-8 text-sm text-slate-500 dark:text-slate-400">
+<a class="hover:text-primary transition-colors" href="#">Support</a>
+<a class="hover:text-primary transition-colors" href="#">Terms</a>
+<a class="hover:text-primary transition-colors" href="#">Privacy</a>
+</div>
+<p class="text-xs text-slate-400 dark:text-slate-600">© 2024 Vidya Education Platform</p>
+</div>
+</footer>
+</div>
+</div>
+</body></html>
