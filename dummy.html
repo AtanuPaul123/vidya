@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>विdya - Cell Structure and Function</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f97316", // Saffron/Orange for Vidya Theme
+                        "background-light": "#fdf8f4",
+                        "background-dark": "#1c1917",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Lexend', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .active-module {
+            border-left: 4px solid #f97316;
+            background-color: rgba(249, 115, 22, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 antialiased">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-50 w-full border-b border-orange-100 dark:border-orange-900/30 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-16">
+<!-- Logo -->
+<div class="flex items-center gap-3">
+<div class="bg-primary p-1.5 rounded-lg flex items-center justify-center text-white">
+<span class="text-2xl font-bold text-xl">वि</span>
+</div>
+<h1 class="text-2xl font-bold tracking-tight text-slate-900 dark:text-slate-100">
+                        वि<span class="text-primary font-extrabold">dya</span>
+</h1>
+</div>
+<!-- Search Bar -->
+<div class="hidden md:flex flex-1 max-w-md mx-8">
+<div class="relative w-full">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400">
+<span class="material-symbols-outlined text-xl">search</span>
+</div>
+<input class="block w-full pl-10 pr-3 py-2 border border-slate-200 dark:border-slate-800 rounded-xl bg-slate-50 dark:bg-slate-900 focus:ring-primary focus:border-primary text-sm" placeholder="Search for topics, definitions..." type="text"/>
+</div>
+</div>
+<!-- Profile & Icons -->
+<div class="flex items-center gap-4">
+<button class="p-2 text-slate-500 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-2 text-slate-500 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">cloud_done</span>
+</button>
+<div class="h-8 w-8 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold overflow-hidden">
+<img alt="User Profile" class="h-full w-full object-cover" data-alt="Student profile picture wearing a smile" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6IO1uIgTJXymxUFOunc4c6JDKwPqPfcoc76MDHWojGR-NpXDEyGGhh3wHXMsPGaK-1qG5_XqcwvdEgS0pJWttSooKUAFqll8De-l-kHmnLy3rnHD2jnJDYKCO729sAredd2kSOkZU_rBlvx_V3Lbq27ht65EA569pmTgteTdpuR3wn4WwMBT8JFgweeDcGUXMEcDlRxZqch4KnqwaY9fS9sa_TeabVuMEXQ73LaJRZqkI0LR1eeZeGjbRsdDlQnge2_wrCjHUHlA"/>
+</div>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+<div class="flex flex-col lg:flex-row gap-8">
+<!-- Left Sidebar Navigation -->
+<aside class="w-full lg:w-80 flex-shrink-0">
+<div class="sticky top-24 space-y-6">
+<!-- Progress Card -->
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-100 dark:border-slate-800 shadow-sm">
+<h3 class="text-sm font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-4">Course Progress</h3>
+<div class="flex items-end justify-between mb-2">
+<span class="text-2xl font-bold text-slate-900 dark:text-slate-100">0%</span>
+<span class="text-sm text-slate-500">1 of 4 Modules</span>
+</div>
+<div class="w-full bg-slate-100 dark:bg-slate-800 rounded-full h-2">
+<div class="bg-primary h-2 rounded-full" style="width: 25%"></div>
+</div>
+</div>
+<!-- Module List -->
+<nav class="bg-white dark:bg-slate-900 rounded-xl border border-slate-100 dark:border-slate-800 shadow-sm overflow-hidden">
+<div class="p-4 border-b border-slate-100 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/50">
+<h3 class="font-bold text-slate-800 dark:text-slate-200">Lesson Modules</h3>
+</div>
+<div class="divide-y divide-slate-50 dark:divide-slate-800">
+<a class="flex items-center gap-3 p-4 active-module group" href="#">
+<span class="material-symbols-outlined text-primary">play_circle</span>
+<div class="flex flex-col">
+<span class="text-sm font-bold text-slate-900 dark:text-slate-100">Introduction to Cells</span>
+<span class="text-xs text-primary font-medium">Currently Reading</span>
+</div>
+</a>
+<a class="flex items-center gap-3 p-4 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group" href="#">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary">lock</span>
+<span class="text-sm font-medium text-slate-600 dark:text-slate-400">Cell Membrane</span>
+</a>
+<a class="flex items-center gap-3 p-4 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group" href="#">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary">lock</span>
+<span class="text-sm font-medium text-slate-600 dark:text-slate-400">Cytoplasm</span>
+</a>
+<a class="flex items-center gap-3 p-4 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group" href="#">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary">lock</span>
+<span class="text-sm font-medium text-slate-600 dark:text-slate-400">Nucleus &amp; Organelles</span>
+</a>
+</div>
+</nav>
+<!-- Resource Links -->
+<div class="bg-orange-50 dark:bg-orange-900/10 p-4 rounded-xl border border-orange-100 dark:border-orange-900/30">
+<h4 class="text-sm font-bold text-orange-800 dark:text-orange-400 mb-2">Need help?</h4>
+<p class="text-xs text-orange-700 dark:text-orange-300 mb-3 leading-relaxed">Download the study guide for offline reading.</p>
+<button class="w-full py-2 bg-white dark:bg-slate-900 text-primary border border-primary/20 text-xs font-bold rounded-lg hover:bg-primary hover:text-white transition-all">
+                            Download PDF Guide
+                        </button>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<article class="flex-1 space-y-8">
+<!-- Breadcrumbs -->
+<nav class="flex text-sm text-slate-500 dark:text-slate-400 font-medium">
+<a class="hover:text-primary" href="#">Biology</a>
+<span class="mx-2 text-slate-300">/</span>
+<a class="hover:text-primary" href="#">Class 11</a>
+<span class="mx-2 text-slate-300">/</span>
+<span class="text-slate-900 dark:text-slate-100">Cell Structure</span>
+</nav>
+<!-- Lesson Header -->
+<section class="space-y-4">
+<h1 class="text-4xl font-extrabold text-slate-900 dark:text-slate-100 leading-tight">
+                        Introduction to Cells: <br/>
+<span class="text-primary italic">The Basic Unit of Life</span>
+</h1>
+<p class="text-lg text-slate-600 dark:text-slate-400 leading-relaxed max-w-3xl">
+                        Just as a house is built from individual bricks, every living thing on Earth is built from cells. Whether it's a giant elephant or a tiny blade of grass, they all share this fundamental building block.
+                    </p>
+</section>
+<!-- Diagram Container -->
+<section class="relative aspect-video w-full overflow-hidden rounded-2xl bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 shadow-xl p-4 flex flex-col items-center justify-center">
+<img alt="Microscopic view of cells" class="w-full h-full object-cover rounded-xl opacity-90" data-alt="Close up scientific microscopic image of colorful biological cells" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcDfWZT6tk9cARiSYUiY6Eq-eTgZdJYzggbLyUr24kZjSxGN7tIZR-3MPc6sXUWmheUAaXLSxL9pzOcTQAWUsQz0osmaLXySx9xAJghDwhktu4Yix21WE9rlTchL50EdA5iYaanReL61f882E8WTmUlc19tosFvYKG4bplsHHB-ZsRZHwkF6IFBqt52QXjpkGoq2MKfIC5VaOj4hs1JDbKQjoXicJ5WbJDoXdCn5mL9qGNb-1B-bxteE4zfYWN24Iiqmu7ib6_D08"/>
+<div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent flex flex-col justify-end p-8 text-white">
+<span class="bg-primary/90 text-white text-xs font-bold px-3 py-1 rounded-full w-fit mb-2">Interactive Diagram</span>
+<h2 class="text-xl font-bold">A Look Inside the Cell</h2>
+<p class="text-sm text-slate-200">Tap on any part of the cell to learn its name and function.</p>
+</div>
+</section>
+<!-- Main Text Content -->
+<section class="prose prose-slate dark:prose-invert max-w-none space-y-6">
+<div class="bg-white dark:bg-slate-900 p-8 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm">
+<h2 class="text-2xl font-bold text-slate-900 dark:text-slate-100 mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">science</span>
+                            What are Cells?
+                        </h2>
+<p class="text-slate-700 dark:text-slate-300 leading-relaxed mb-4">
+                            In biology, the <strong>cell</strong> is the smallest unit that can live on its own and that makes up all living organisms and the tissues of the body. A cell has three main parts: the cell membrane, the nucleus, and the cytoplasm.
+                        </p>
+<div class="grid md:grid-cols-2 gap-6 mt-8">
+<div class="p-4 bg-background-light dark:bg-slate-800 rounded-xl border-l-4 border-primary">
+<h4 class="font-bold text-slate-900 dark:text-slate-100 mb-1">Unicellular</h4>
+<p class="text-sm text-slate-600 dark:text-slate-400">Organisms that consist of a single cell, like bacteria or amoeba.</p>
+</div>
+<div class="p-4 bg-background-light dark:bg-slate-800 rounded-xl border-l-4 border-primary">
+<h4 class="font-bold text-slate-900 dark:text-slate-100 mb-1">Multicellular</h4>
+<p class="text-sm text-slate-600 dark:text-slate-400">Organisms made of many cells, like plants, animals, and humans.</p>
+</div>
+</div>
+</div>
+<div class="space-y-4">
+<h3 class="text-xl font-bold text-slate-900 dark:text-slate-100">Cell Theory</h3>
+<p class="text-slate-700 dark:text-slate-300">
+                            The Cell Theory is one of the basic principles of biology. It was developed in the mid-1800s and states that:
+                        </p>
+<ul class="space-y-3">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary mt-0.5">check_circle</span>
+<span>All living organisms are composed of one or more cells.</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary mt-0.5">check_circle</span>
+<span>The cell is the basic unit of structure and organization in organisms.</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary mt-0.5">check_circle</span>
+<span>Cells arise from pre-existing cells.</span>
+</li>
+</ul>
+</div>
+<!-- Key Takeaway Box -->
+<div class="bg-primary/5 dark:bg-primary/10 border-2 border-dashed border-primary/30 p-6 rounded-2xl">
+<h4 class="text-primary font-bold flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined">lightbulb</span>
+                            Quick Recall
+                        </h4>
+<p class="text-slate-800 dark:text-slate-200 italic font-medium">
+                            "The cell is the structural and functional unit of life." — Remember this definition as it is the foundation of all biology!
+                        </p>
+</div>
+</section>
+<!-- Footer Navigation Actions -->
+<section class="pt-8 border-t border-slate-100 dark:border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-6">
+<div class="flex items-center gap-4">
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox" value=""/>
+<div class="w-11 h-6 bg-slate-200 peer-focus:outline-none rounded-full peer dark:bg-slate-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-primary"></div>
+<span class="ml-3 text-sm font-bold text-slate-600 dark:text-slate-400 uppercase">Mark as Complete</span>
+</label>
+</div>
+<div class="flex items-center gap-4 w-full sm:w-auto">
+<button class="flex-1 sm:flex-none px-6 py-3 text-sm font-bold text-slate-600 dark:text-slate-400 hover:text-primary transition-colors">
+                            Previous Lesson
+                        </button>
+<button class="flex-1 sm:flex-none bg-primary hover:bg-orange-600 text-white px-8 py-3 rounded-xl font-bold shadow-lg shadow-primary/20 transition-all flex items-center justify-center gap-2 group">
+                            Next: Cell Membrane
+                            <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+</section>
+</article>
+</div>
+</main>
+<!-- Simple Accessibility Footer -->
+<footer class="bg-slate-50 dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800 py-12 mt-12">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="flex flex-col items-center md:items-start gap-4">
+<div class="flex items-center gap-2">
+<div class="bg-primary/10 p-1 rounded-md">
+<span class="text-primary text-xl font-bold">वि</span>
+</div>
+<span class="text-lg font-bold">विdya</span>
+</div>
+<p class="text-slate-500 text-sm">Empowering every village with quality education.</p>
+</div>
+<div class="flex gap-8 text-sm font-medium text-slate-600 dark:text-slate-400">
+<a class="hover:text-primary" href="#">Help Center</a>
+<a class="hover:text-primary" href="#">Offline Mode</a>
+<a class="hover:text-primary" href="#">Dictionary</a>
+<a class="hover:text-primary" href="#">Contact Support</a>
+</div>
+<div class="flex gap-4">
+<button class="h-10 w-10 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-600 dark:text-slate-400">
+<span class="material-symbols-outlined text-lg">translate</span>
+</button>
+<button class="h-10 w-10 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-600 dark:text-slate-400">
+<span class="material-symbols-outlined text-lg">dark_mode</span>
+</button>
+</div>
+</div>
+</footer>
+</body></html>
