@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>विdya - Student Dashboard</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#73d411",
+                        "saffron": "#FF9933",
+                        "background-light": "#f7f8f6",
+                        "background-dark": "#192210",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend"]
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+    <style>
+        body { font-family: 'Lexend', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen">
+    <div class="flex h-screen overflow-hidden">
+        <aside class="w-64 bg-white dark:bg-slate-900 border-r border-slate-200 dark:border-slate-800 flex flex-col h-full">
+            <div class="p-6 flex items-center gap-3">
+                <div class="size-10 bg-saffron flex items-center justify-center rounded-lg shadow-sm">
+                    <span class="text-white text-2xl font-bold">वि</span>
+                </div>
+                <h2 class="text-saffron text-2xl font-extrabold tracking-tight">विdya</h2>
+            </div>
+            <nav class="flex-1 px-4 space-y-2 mt-4">
+                <a class="flex items-center gap-3 px-4 py-3 bg-primary/10 text-primary rounded-xl font-medium" href="#">
+                    <span class="material-symbols-outlined">book_4</span>
+                    <span>Courses</span>
+                </a>
+                <a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-xl transition-colors font-medium" href="#">
+                    <span class="material-symbols-outlined">analytics</span>
+                    <span>Progress</span>
+                </a>
+                <a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-xl transition-colors font-medium" href="#">
+                    <span class="material-symbols-outlined">person</span>
+                    <span>Profile</span>
+                </a>
+                <a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-xl transition-colors font-medium" href="#">
+                    <span class="material-symbols-outlined">settings</span>
+                    <span>Settings</span>
+                </a>
+            </nav>
+            <div class="p-4 border-t border-slate-200 dark:border-slate-800">
+                <button class="flex items-center gap-3 px-4 py-3 text-red-500 hover:bg-red-50 dark:hover:bg-red-900/10 rounded-xl transition-colors font-medium w-full">
+                    <span class="material-symbols-outlined">logout</span>
+                    <span>Logout</span>
+                </button>
+            </div>
+        </aside>
+
+        <main class="flex-1 flex flex-col overflow-y-auto bg-background-light dark:bg-background-dark">
+            <header class="h-20 flex items-center justify-between px-8 bg-white/50 dark:bg-slate-900/50 backdrop-blur-md sticky top-0 z-10 border-b border-slate-200 dark:border-slate-800">
+                <div class="flex items-center gap-4">
+                    <div class="bg-primary/10 p-2 rounded-lg hidden lg:block">
+                        <span class="material-symbols-outlined text-primary">waving_hand</span>
+                    </div>
+                    <div>
+                        <h1 class="text-xl font-bold">Namaste, Rahul!</h1>
+                        <p class="text-sm text-slate-500 dark:text-slate-400">Ready to learn something new today?</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-6">
+                    <div class="hidden md:flex items-center bg-slate-100 dark:bg-slate-800 px-3 py-1.5 rounded-full border border-slate-200 dark:border-slate-700">
+                        <span class="material-symbols-outlined text-slate-400 text-sm mr-2">search</span>
+                        <input class="bg-transparent border-none focus:ring-0 text-sm w-48 placeholder:text-slate-400" placeholder="Search courses..." type="text"/>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <button class="size-10 rounded-full flex items-center justify-center bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm relative">
+                            <span class="material-symbols-outlined text-slate-600 dark:text-slate-300">notifications</span>
+                            <span class="absolute top-2 right-2 size-2 bg-red-500 rounded-full"></span>
+                        </button>
+                        <div class="size-10 rounded-full border-2 border-primary overflow-hidden">
+                            <img alt="User Profile" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCP6Na4zhy42rQXWgfhklzJ06lUL1N1ebaxrKFbzMsiwgJMWkYyYUE684-lddklI7wiM2GAI44jTtnBJBbWtUOPDvSmnqmycgqgVehfYG7d73CWx6x07nz67DoPcBL9vEP9yBt-Pzl5tJBaVn7GlulCBu_vTKVuW0vm57NWSYHGNtZhfIXdoDoiSkUfcVnk7qFNT9eEezBEK9iZy3VnWy3zWIMc_0cfDs2tcl19U9VYeySh_ll_ykURGGmsjHuIjyra1y5MfJFb3_M"/>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="p-8 @container">
+                <div class="flex flex-col gap-8">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm flex items-center gap-4">
+                            <div class="size-12 rounded-lg bg-primary/10 flex items-center justify-center">
+                                <span class="material-symbols-outlined text-primary">timer</span>
+                            </div>
+                            <div>
+                                <p class="text-slate-500 dark:text-slate-400 text-sm">Study Time</p>
+                                <p class="text-xl font-bold">12.5 hrs</p>
+                            </div>
+                        </div>
+                        <div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm flex items-center gap-4">
+                            <div class="size-12 rounded-lg bg-saffron/10 flex items-center justify-center">
+                                <span class="material-symbols-outlined text-saffron">auto_stories</span>
+                            </div>
+                            <div>
+                                <p class="text-slate-500 dark:text-slate-400 text-sm">Active Courses</p>
+                                <p class="text-xl font-bold">3 Subjects</p>
+                            </div>
+                        </div>
+                        <div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm flex items-center gap-4">
+                            <div class="size-12 rounded-lg bg-blue-500/10 flex items-center justify-center">
+                                <span class="material-symbols-outlined text-blue-500">military_tech</span>
+                            </div>
+                            <div>
+                                <p class="text-slate-500 dark:text-slate-400 text-sm">Achievements</p>
+                                <p class="text-xl font-bold">8 Badges</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="flex items-center justify-between mb-6">
+                            <h2 class="text-2xl font-bold">My Subjects</h2>
+                            <button class="text-primary font-semibold text-sm hover:underline">View All</button>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                            <div class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-md transition-shadow group">
+                                <div class="h-48 relative overflow-hidden">
+                                    <div class="absolute inset-0 bg-primary/20 flex items-center justify-center">
+                                        <span class="material-symbols-outlined text-7xl text-primary opacity-50">calculate</span>
+                                    </div>
+                                    <div class="absolute bottom-4 left-4">
+                                        <span class="px-3 py-1 bg-white/90 dark:bg-slate-900/90 rounded-full text-xs font-bold shadow-sm">CORE SUBJECT</span>
+                                    </div>
+                                </div>
+                                <div class="p-6">
+                                    <h3 class="text-xl font-bold mb-1">Mathematics</h3>
+                                    <p class="text-slate-500 dark:text-slate-400 text-sm mb-6">Calculus, Linear Algebra & Geometry</p>
+                                    <div class="space-y-4">
+                                        <div class="flex justify-between items-end">
+                                            <span class="text-sm font-medium">Course Progress</span>
+                                            <span class="text-sm font-bold text-primary">75%</span>
+                                        </div>
+                                        <div class="w-full bg-slate-100 dark:bg-slate-800 h-2.5 rounded-full overflow-hidden">
+                                            <div class="bg-primary h-full rounded-full" style="width: 75%"></div>
+                                        </div>
+                                        <button class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-3 rounded-xl transition-colors flex items-center justify-center gap-2">
+                                            <span>View Progress Report</span>
+                                            <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-md transition-shadow group">
+                                <div class="h-48 relative overflow-hidden">
+                                    <div class="absolute inset-0 bg-blue-500/10 flex items-center justify-center">
+                                        <span class="material-symbols-outlined text-7xl text-blue-500 opacity-50">science</span>
+                                    </div>
+                                    <div class="absolute bottom-4 left-4">
+                                        <span class="px-3 py-1 bg-white/90 dark:bg-slate-900/90 rounded-full text-xs font-bold shadow-sm">ELECTIVE</span>
+                                    </div>
+                                </div>
+                                <div class="p-6">
+                                    <h3 class="text-xl font-bold mb-1">Chemistry</h3>
+                                    <p class="text-slate-500 dark:text-slate-400 text-sm mb-6">Organic, Inorganic & Physical Chemistry</p>
+                                    <div class="space-y-4">
+                                        <div class="flex justify-between items-end">
+                                            <span class="text-sm font-medium">Course Progress</span>
+                                            <span class="text-sm font-bold text-blue-500">40%</span>
+                                        </div>
+                                        <div class="w-full bg-slate-100 dark:bg-slate-800 h-2.5 rounded-full overflow-hidden">
+                                            <div class="bg-blue-500 h-full rounded-full" style="width: 40%"></div>
+                                        </div>
+                                        <button class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-3 rounded-xl transition-colors flex items-center justify-center gap-2">
+                                            <span>View Progress Report</span>
+                                            <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-md transition-shadow group">
+                                <div class="h-48 relative overflow-hidden">
+                                    <div class="absolute inset-0 bg-saffron/10 flex items-center justify-center">
+                                        <span class="material-symbols-outlined text-7xl text-saffron opacity-50">biotech</span>
+                                    </div>
+                                    <div class="absolute bottom-4 left-4">
+                                        <span class="px-3 py-1 bg-white/90 dark:bg-slate-900/90 rounded-full text-xs font-bold shadow-sm">CORE SUBJECT</span>
+                                    </div>
+                                </div>
+                                <div class="p-6">
+                                    <h3 class="text-xl font-bold mb-1">Biology</h3>
+                                    <p class="text-slate-500 dark:text-slate-400 text-sm mb-6">Human Anatomy, Botany & Zoology</p>
+                                    <div class="space-y-4">
+                                        <div class="flex justify-between items-end">
+                                            <span class="text-sm font-medium">Course Progress</span>
+                                            <span class="text-sm font-bold text-saffron">90%</span>
+                                        </div>
+                                        <div class="w-full bg-slate-100 dark:bg-slate-800 h-2.5 rounded-full overflow-hidden">
+                                            <div class="bg-saffron h-full rounded-full" style="width: 90%"></div>
+                                        </div>
+                                        <button class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-3 rounded-xl transition-colors flex items-center justify-center gap-2">
+                                            <span>View Progress Report</span>
+                                            <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white dark:bg-slate-900 p-8 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+                        <div class="flex items-center justify-between mb-6">
+                            <h2 class="text-xl font-bold">Live Classes Today</h2>
+                            <span class="text-xs font-bold px-2 py-1 bg-red-100 text-red-600 rounded">LIVE NOW</span>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="flex flex-col md:flex-row md:items-center justify-between p-4 bg-slate-50 dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 gap-4">
+                                <div class="flex items-center gap-4">
+                                    <div class="size-12 bg-white dark:bg-slate-900 rounded-lg flex items-center justify-center border border-slate-200 dark:border-slate-800 shadow-sm">
+                                        <span class="material-symbols-outlined text-primary">videocam</span>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold">Organic Chemistry - Workshop</h4>
+                                        <p class="text-sm text-slate-500 dark:text-slate-400">Miss Sneha Saha • 10:30 AM - 12:00 PM</p>
+                                    </div>
+                                </div>
+                                <button class="bg-primary text-white px-6 py-2 rounded-lg font-bold text-sm">Join Class</button>
+                            </div>
+                            <div class="flex flex-col md:flex-row md:items-center justify-between p-4 bg-white dark:bg-slate-900 rounded-xl border border-slate-100 dark:border-slate-800 gap-4">
+                                <div class="flex items-center gap-4 opacity-70">
+                                    <div class="size-12 bg-slate-50 dark:bg-slate-800 rounded-lg flex items-center justify-center border border-slate-200 dark:border-slate-700 shadow-sm">
+                                        <span class="material-symbols-outlined text-slate-400">event</span>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold">Calculus Advanced Integrals</h4>
+                                        <p class="text-sm text-slate-500 dark:text-slate-400">Prof. Amit Kumar • 02:00 PM - 03:30 PM</p>
+                                    </div>
+                                </div>
+                                <button class="bg-slate-100 dark:bg-slate-800 text-slate-400 px-6 py-2 rounded-lg font-bold text-sm cursor-not-allowed">Scheduled</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
